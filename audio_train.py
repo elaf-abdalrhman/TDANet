@@ -144,7 +144,7 @@ def main(config):
 
     # Don't ask GPU if they are not available.
     if torch.cuda.is_available():
-        devices = config["training"]["gpus"]  # Use GPU if available
+        devices = config["training"]["gpus"][1]  # Use GPU if available
         accelerator = "cuda"
     else:
         devices = 1  # Ensure at least 1 CPU is used
