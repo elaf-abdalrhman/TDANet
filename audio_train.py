@@ -167,7 +167,7 @@ def main(config):
     default_root_dir=exp_dir,
     devices=devices,
     accelerator=accelerator,  # Use the corrected accelerator
-    strategy=DDPStrategy(find_unused_parameters=True) if devices > 1 else "auto",
+    strategy=DDPStrategy(find_unused_parameters=True) if isinstance(devices, int) and devices > 1 else "auto",
     limit_train_batches=1.0,
     gradient_clip_val=5.0,
     logger=comet_logger,
