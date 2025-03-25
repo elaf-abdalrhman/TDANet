@@ -29,7 +29,7 @@ training:
   system: AudioLightningModule
   gpus: [0,1,2,3]
   parallel: ddp
-  epochs: 500
+  epochs: 1
   early_stop:
     monitor: val_loss/dataloader_idx_0
     mode: min
